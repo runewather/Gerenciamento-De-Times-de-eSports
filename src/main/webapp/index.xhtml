@@ -26,7 +26,7 @@
 						required="true" requiredMessage="Senha obrigatória" />
 				</p>
 				
-				<p><h:commandButton action="#{userMB.login}" 
+				<p><h:commandButton action="#{accountManager.DoLogin(userMB.user.email, userMB.user.password)}"
 					value="Login" /></p>
 			</fieldset>
 		</h:form>
