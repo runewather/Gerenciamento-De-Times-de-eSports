@@ -1,11 +1,14 @@
 package dominio;
 
+import java.util.List;
+
 /* Os imports da Persistencia DAO */
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -15,8 +18,7 @@ public class Contato {
 	
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ATIVIDADE")
-	@SequenceGenerator(name="SEQ_ATIVIDADE", sequenceName="id_seq_atividade", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id_contato")
 	private String id;
 	
@@ -32,6 +34,8 @@ public class Contato {
 	@Column(name= "dataCadastro_contato",columnDefinition="timestamp without time zone", nullable=false)
 	private String dataCadastro;
 	
+	@ManyToMany(mappedBy="contatos")
+	private List<Usuario> usuarios;
 	
 	/* Construtores da class */
 	
