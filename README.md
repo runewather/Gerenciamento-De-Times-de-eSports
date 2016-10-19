@@ -1,0 +1,2 @@
+O propósito desta aplicação Web é permitir a 
+um usuário fazer o cadastro de contatos pessoais. O usuário inicialmente faz login fornecendo nome de usuário e senha e, se autorizado, torna-se apto a cadastrar contatos, que consistem de nome, endereço de e-mail e número de telefone. Uma vez realizada a operação de cadastro, é exibida uma lista com os contatos que já foram cadastrados.
