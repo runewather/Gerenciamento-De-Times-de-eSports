@@ -32,12 +32,7 @@ public class Usuario {
 	@Column(name= "senha",columnDefinition="varchar(64)", nullable=false)
 	private String senha;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="contato",
-		joinColumns={@JoinColumn(name="id_usuario")},
-		inverseJoinColumns={@JoinColumn(name="id_contato")})
-	private <Contato> contatos;
-	
+
 	
 	
 	public Usuario(){

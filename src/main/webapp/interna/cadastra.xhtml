@@ -2,43 +2,161 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough" 
+	xmlns:p="http://primefaces.org/ui" 
 	template="/include/template.xhtml">
 	
 	<ui:define name="titulo">
-		<title>Cadastro de Contato</title>
+		<title>Pagina Inicial</title>
+		<meta charset="utf-8"></meta>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css"></link>
+		<link rel="stylesheet" href="assets/css/font.css"></link>
+		<link rel="stylesheet" href="assets/css/animate.css"></link>
+		<link rel="stylesheet" href="assets/css/structure.css"></link>
 	</ui:define>
 
+	
+	
+	
+	
 	<ui:define name="conteudo">
-		<h:form>
-			<h1>Novo contato</h1>
+			<body>
 			
-			<h:messages />
-			<fieldset>
-				<p>Nome:</p>
-				<p><h:inputText value="#{contatoMB.contato.nome}"
-					required="true" requiredMessage="Nome obrigatório" />
-				</p>
-				
-				<p>E-mail:</p>
-				<p>
-					<h:inputText value="#{contatoMB.contato.email}"
-						validatorMessage="E-mail inválido">
-						<f:validateRegex pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
-					</h:inputText>
-				</p>
-				
-				<p>Telefone:</p>
-				<p>
-					<h:inputText value="#{contatoMB.contato.telefone}"
-						minlength="8"
-						validatorMessage="Número de telefone inválido">
-						<f:validateRegex pattern="[0-9]+" />
-					</h:inputText>
-				</p>
-				
-				<p><h:commandButton action="#{contatoMB.cadastrar}" 
-					value="Cadastrar" /></p>
-			</fieldset>
-		</h:form>
+			<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+			<header id="header">
+			  <div class="container">
+			    <nav class="navbar navbar-default" role="navigation">
+			      <div class="container-fluid">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			          <a class="navbar-brand" href="index.html"><span>DOTA</span>Clan</a> </div>
+			        <div id="navbar" class="navbar-collapse collapse">
+			          <ul class="nav navbar-nav custom_nav">
+			            <li class=""><a href="index.html">Home</a></li>
+			            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clans</a>
+			              <ul class="dropdown-menu" role="menu">
+			                <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Jobs Home</a> </li>
+			                <li><a href="#">Faq</a></li>
+			                <li><a href="#">Home</a></li>
+			                <li><a href="#">Article</a></li>
+			              </ul>
+			            </li>
+			            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jogadores</a>
+			              <ul class="dropdown-menu" role="menu">
+			                <li><a href="#">Standard Blog Layout</a></li>
+			                <li><a href="#">Post With Comments</a></li>
+			                <li><a href="#">Page:Right Sidebar</a></li>
+			              </ul>
+			            </li>
+			            
+			            <!-- Area do Login -->
+			            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sua Conta</a>
+			              <ul class="dropdown-menu" role="menu">
+			                 
+			                 <h:form style="margin: 55px;" name="TelaLogin" >
+				                   <b>AREA DO LOGIN</b><br></br>
+				                   <h:messages style="color:red"/>
+				                   <p><h:inputText a:placeholder="Login" value="#{usuarioMB.usuario.login}" 
+												required="true"  requiredMessage="Login obrigatório" style="margin-bottom: 12px; background-color: #D3D3D3;" /></p>
+				                   
+				                   
+				                   <p><h:inputSecret a:placeholder="Senha" value="#{usuarioMB.usuario.senha}" 
+				        						required="true" requiredMessage="Senha obrigatória" style="margin-top: 12px; margin-bottom: 12px;" /></p>
+				                   
+				                   <p><h:commandButton action="#{usuarioMB.login}" value="Logar" styleClass="btn btn-primary btn-block btn-large" /></p>
+				                   <p><h:commandButton action="#{usuarioMB.login}" value="Registrar" styleClass="btn btn-primary btn-block btn-large" /></p>
+				                   <br></br>
+				                   
+				              </h:form>
+			              </ul>
+			            </li>
+			          </ul>
+			        </div>
+			      </div>
+			    </nav>
+			    
+			    
+			  
+			    
+			    <form id="searchForm">
+			      <input type="text" placeholder="Search..."></input>
+			      <input type="submit" value=""></input>
+			    </form>
+			  </div>
+			</header>
+			
+			      
+			 <!-- Parte ConteudyBody do site -->     
+			<section id="contentbody">
+			  <div class="container">
+			    <div class="row">
+			      <div class=" col-sm-12 col-md-6 col-lg-6">
+			        <div class="row">
+			          <div class="leftbar_content">
+			           <h3>Cadastro</h3>
+							<h:form id="form">
+			                <h:panelGrid columns="1" >
+			 
+			                    <p:inputText  />
+			                    <h:outputLabel value="Nome"></h:outputLabel>
+			                    <p:inputText id="nome" label="Nome" required="true" requiredMessage="O Campo Nome é obrigatório.">
+			                    </p:inputText>
+			 
+			                    <h:outputLabel value="Nascimento / Fundação" ></h:outputLabel>
+			                    <p:calendar locale="pt" showButtonPanel="true" navigator="true"
+			                         showOn="button"></p:calendar>
+			 
+			 
+			                <h:outputLabel ></h:outputLabel>
+			                <h:selectOneListbox  size="1" >
+			                    <f:selectItems  ></f:selectItems>
+			                </h:selectOneListbox>
+			 
+			                <h:outputLabel ></h:outputLabel> 
+			                    <h:selectOneListbox   size="1"> 
+			                        <f:selectItem itemLabel="Selecione o Genero" /> 
+			                        <f:selectItems  var="genero"  /> 
+			                    
+			                     </h:selectOneListbox> 
+			                      
+			                      
+			 
+			                    <h:outputLabel value="País"></h:outputLabel>
+			                    <p:selectOneMenu >
+			                        <f:selectItem itemLabel="Selecione o País" />
+			                        <f:selectItems  var="pais" />
+			                    </p:selectOneMenu>
+			 
+			                </h:panelGrid>
+			 
+			                <p:commandButton value="Gravar" ></p:commandButton>
+			            </h:form>
+			            
+			            
+			            
+			            
+			            
+			            
+			            </div>
+			            
+			        
+							            
+			          </div>
+			        </div>
+			      </div>
+			      </div>
+			      </section>
+			
+			
+			
+			<script src="assets/js/jquery.min.js"></script> 
+			<script src="assets/js/bootstrap.min.js"></script> 
+			<script src="assets/js/wow.min.js"></script> 
+			<script src="assets/js/custom.js"></script>
+			
+			</body>
 	</ui:define>
 </ui:composition>
