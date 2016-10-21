@@ -96,43 +96,36 @@
 			      <div class=" col-sm-12 col-md-6 col-lg-6">
 			        <div class="row">
 			          <div class="leftbar_content">
-			           <h3>Cadastro</h3>
-							<h:form id="form">
-			                <h:panelGrid columns="1" >
-			 
-			                    <p:inputText  />
-			                    <h:outputLabel value="Nome"></h:outputLabel>
-			                    <p:inputText id="nome" label="Nome" required="true" requiredMessage="O Campo Nome é obrigatório.">
-			                    </p:inputText>
-			 
-			                    <h:outputLabel value="Nascimento / Fundação" ></h:outputLabel>
-			                    <p:calendar locale="pt" showButtonPanel="true" navigator="true"
-			                         showOn="button"></p:calendar>
-			 
-			 
-			                <h:outputLabel ></h:outputLabel>
-			                <h:selectOneListbox  size="1" >
-			                    <f:selectItems  ></f:selectItems>
-			                </h:selectOneListbox>
-			 
-			                <h:outputLabel ></h:outputLabel> 
-			                    <h:selectOneListbox   size="1"> 
-			                        <f:selectItem itemLabel="Selecione o Genero" /> 
-			                        <f:selectItems  var="genero"  /> 
-			                    
-			                     </h:selectOneListbox> 
-			                      
-			                      
-			 
-			                    <h:outputLabel value="País"></h:outputLabel>
-			                    <p:selectOneMenu >
-			                        <f:selectItem itemLabel="Selecione o País" />
-			                        <f:selectItems  var="pais" />
-			                    </p:selectOneMenu>
-			 
-			                </h:panelGrid>
-			 
-			                <p:commandButton value="Gravar" ></p:commandButton>
+						<h:form id="form">
+							<p:panel header="Cadastro">
+								<p:messages autoUpdate="true"/>
+				                <h:panelGrid columns="1" >
+				 
+				                  
+				                    <h:outputLabel value="Nome:"></h:outputLabel> 
+				                    <p:inputText id="nome" label="Nome" required="true" requiredMessage="O Campo Nome é obrigatório."></p:inputText>
+				                    
+				                    <h:outputLabel value="Nick:"></h:outputLabel> 
+				                    <p:inputText id="nick" label="Nome" required="true" requiredMessage="O Campo Nick é obrigatório."></p:inputText>
+				                  
+				 					<h:outputLabel value="Email:"></h:outputLabel> 
+				                    <p:inputText id="email" label="Nome" required="true" requiredMessage="O Campo Email é obrigatório." ></p:inputText>
+				                    
+				                    <p:outputLabel value="Nascimento:" />
+	        						<p:calendar id="data" value="#{calendarView.date9}" pattern="dd-MM-yyyy" mask="true" />
+				 					
+				 					<h:outputLabel value="DotaBuffLink:"></h:outputLabel> 
+				                    <p:inputText id="dotabuff" label="Nome" required="true" requiredMessage="O Campo DotaBuffLink é obrigatório." ></p:inputText>
+				 					
+				 					<h:outputLabel value="Senha:"/>
+        							<p:password id="senha" value="#{passwordView.password2}" feedback="true" required="true" requiredMessage="O Campo Senha é obrigatório."/>
+				 					
+				 					<h:outputLabel value="Confirmar Senha:" />
+        							<p:password id="confirmaSenha" value="#{passwordView.password2}" feedback="true" required="true" requiredMessage="O Campo Confirma Senha é obrigatório."/>
+				                </h:panelGrid>
+				                <br/><p><h:commandButton action="#{usuarioMB.login}" value="Cadastrar" styleClass="btn btn-danger  btn-md" /></p>
+				              </p:panel>
+			            
 			            </h:form>
 			            
 			            
